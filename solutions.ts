@@ -39,11 +39,6 @@ const checkTypeResult2 = checkType("Hello");
 // console.log(checkTypeResult1, checkTypeResult2);
 
 //* problem 4
-interface IUser {
-  id: number;
-  name: string;
-  age: number;
-}
 
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
@@ -86,7 +81,8 @@ class Person {
   name: string;
   age: number;
   constructor(name: string, age: number) {
-    ((this.name = name), (this.age = age));
+    this.name = name;
+    this.age = age;
   }
 }
 
@@ -114,4 +110,4 @@ function getIntersection(arr1: number[], arr2: number[]): number[] {
 
 // Sample Usage:
 const resultGetInterSection = getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
-console.log(resultGetInterSection);
+// console.log(resultGetInterSection);
