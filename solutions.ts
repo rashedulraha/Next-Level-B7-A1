@@ -37,3 +37,20 @@ const checkType = (input: TypeGuard) => {
 const checkTypeResult1 = checkType(5);
 const checkTypeResult2 = checkType("Hello");
 // console.log(checkTypeResult1, checkTypeResult2);
+
+//* problem 4
+interface IUser {
+  id: number;
+  name: string;
+  age: number;
+}
+
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+// Sample Usage:
+const user = { id: 1, name: "John Doe", age: 21 };
+
+const userName = getProperty(user, "name");
+const userAge = getProperty(user, "age");
