@@ -54,3 +54,28 @@ const user = { id: 1, name: "John Doe", age: 21 };
 
 const userName = getProperty(user, "name");
 const userAge = getProperty(user, "age");
+
+//* problem number 5
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+}
+
+function toggleReadStatus(book: Book) {
+  return {
+    ...book,
+    isRead: true,
+  };
+}
+
+// Sample Usage:
+const myBook: Book = {
+  title: "TypeScript Guide",
+  author: "Jane Doe",
+  publishedYear: 2024,
+};
+
+const updatedBook = toggleReadStatus(myBook);
+// console.log(updatedBook);
