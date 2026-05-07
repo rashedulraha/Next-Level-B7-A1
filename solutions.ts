@@ -83,10 +83,11 @@ const updatedBook = toggleReadStatus(myBook);
 //* problem 6
 
 class Person {
-  constructor(
-    public name: string,
-    public age: number,
-  ) {}
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    ((this.name = name), (this.age = age));
+  }
 }
 
 class Student extends Person {
@@ -104,3 +105,13 @@ class Student extends Person {
 
 const student = new Student("Alice", 20, "A");
 // console.log(student.getDetails());
+
+//* problem number 7
+
+function getIntersection(arr1: number[], arr2: number[]): number[] {
+  return arr1.filter((item) => arr2.includes(item));
+}
+
+// Sample Usage:
+const resultGetInterSection = getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
+console.log(resultGetInterSection);
